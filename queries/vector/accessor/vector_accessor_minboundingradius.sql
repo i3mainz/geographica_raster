@@ -1,0 +1,1 @@
+SELECT st_minimumboundingradius(wkb_geometry),wkb_geometry FROM geographica_vector;
