@@ -1,0 +1,1 @@
+SELECT st_force_4d(wkb_geometry),wkb_geometry FROM geographica_vector;

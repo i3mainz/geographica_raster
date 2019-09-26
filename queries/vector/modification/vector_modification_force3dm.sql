@@ -1,0 +1,1 @@
+SELECT st_force_3dm(wkb_geometry),wkb_geometry FROM geographica_vector;

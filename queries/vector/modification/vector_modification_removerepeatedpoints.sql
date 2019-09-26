@@ -1,0 +1,1 @@
+SELECT st_removerepeatedpoints(wkb_geometry,0),wkb_geometry FROM geographica_vector;
