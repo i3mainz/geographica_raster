@@ -1,0 +1,1 @@
+SELECT st_swapordinates(wkb_geometry,'xy'),wkb_geometry FROM geographica_vector;
