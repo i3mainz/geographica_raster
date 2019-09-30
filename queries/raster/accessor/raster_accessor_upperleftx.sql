@@ -1,0 +1,1 @@
+SELECT st_upperleftx(rast) FROM snow;

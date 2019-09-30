@@ -1,0 +1,11 @@
+rdf-syntax-ns#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xerl: <http://www.xerleben.de/schema/2.0_1#>
+PREFIX xplan5: <http://www.xplanung.de/xplangml/5/0#>
+PREFIX semgis: <http://www.semgis.de/geodata#> 
+SELECT ?withindistance ?the_geom WHERE {
+ ?geom geo:asWKT ?the_geom .
+ BIND(geo:ST_DWithin(?the_geom,?the_geom,10) AS ?withindistance) 
+}

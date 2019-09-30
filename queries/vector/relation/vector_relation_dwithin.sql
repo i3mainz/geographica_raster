@@ -1,0 +1,1 @@
+SELECT st_dwithin(wkb_geometry,wkb_geometry,10),wkb_geometry FROM geographica_vector;

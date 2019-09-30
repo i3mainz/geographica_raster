@@ -1,0 +1,1 @@
+SELECT ST_MapAlgebra(rast, 1,rast, 1,'([rast2.val] * [rast1.val])::float','32BF') FROM snow;

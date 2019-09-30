@@ -1,0 +1,1 @@
+SELECT st_asencodedpolyline(wkb_geometry),wkb_geometry FROM geographica_vector;

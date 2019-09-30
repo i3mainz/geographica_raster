@@ -1,0 +1,1 @@
+SELECT st_hasnoband(rast) FROM snow;

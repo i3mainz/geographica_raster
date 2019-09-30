@@ -1,0 +1,1 @@
+SELECT ST_AsTiff(rast) FROM snow;

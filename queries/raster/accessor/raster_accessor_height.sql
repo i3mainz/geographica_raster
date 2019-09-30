@@ -1,0 +1,1 @@
+SELECT st_height(rast) FROM snow;

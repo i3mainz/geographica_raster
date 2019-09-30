@@ -9,7 +9,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xerl: <http://www.xerleben.de/schema/2.0_1#>
 PREFIX xplan5: <http://www.xplanung.de/xplangml/5/0#>
 PREFIX semgis: <http://www.semgis.de/geodata#> 
-SELECT ?numBands ?the_geom WHERE {
- ?geom geo:asRasterWKB ?the_geom .
- BIND(geo:ST_NumBands(?the_geom) AS ?numBands) 
-}
+SELECT ?crosses ?the_geom WHERE {
+ ?geom geo:asWKT ?the_geom .
+ BIND(geo:ST_crosses(?the_geom,?the_geom) AS ?crosses) 
+} 

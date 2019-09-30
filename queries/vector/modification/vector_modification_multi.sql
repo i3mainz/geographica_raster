@@ -1,0 +1,1 @@
+SELECT st_multi(wkb_geometry),wkb_geometry FROM geographica_vector;
