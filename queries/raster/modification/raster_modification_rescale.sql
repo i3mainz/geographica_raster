@@ -1,0 +1,1 @@
+SELECT ST_Rescale(rast,'8BUI'::text, 1, 0) FROM snow;

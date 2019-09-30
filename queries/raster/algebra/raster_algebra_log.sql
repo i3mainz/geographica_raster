@@ -1,0 +1,1 @@
+SELECT ST_MapAlgebra(rast, 1,'32BF','log([rast.val])::float') FROM snow;

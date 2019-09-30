@@ -1,0 +1,1 @@
+SELECT st_contains(snow,wkb_geometry),wkb_geometry FROM geographica_vector,snow;
