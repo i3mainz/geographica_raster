@@ -1,0 +1,132 @@
+<html> 
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Geographica Raster</title> 
+  <meta http-equiv="Content-Type" content= "text/html; charset=utf-8"> 
+  <meta content= "Geographica, stRDF, stSPARQL, GeoSPARQL, Benchmark, Semantic Web, Semantic Web, RDF, OWL" name="keywords" lang="en"> 
+  <meta content= "Geographica" name="description" lang="en"> 
+  <link rel="stylesheet" type="text/css" href="/style.css ">
+</head> 
+ 
+<body> 
+<h1>Geographica Raster: A Benchmark for Geospatial RDF Stores implementing GeoSPARQL 2.0</h1>
+
+
+<b>Authors</b>
+<ul>
+        <li><a href="https://i3mainz.de/en/personal/timo.homburg">Timo Homburg</a> (timo.homburg [at] hs-mainz [dot] de)</li>
+</ul>
+
+<h2>Introduction</h2>
+<p>
+Geospatial extensions such as GeoSPARQL have been around for quite some time now. The <a href="http://geographica.di.uoa.gr/">Geographica Benchmark</a> has been established in the linked data community as a standardized benchmark to test the performance of geospatial RDF stores.<br>
+GeoSPARQL 2.0 extends GeoSPARQL by defining the following categories:
+<ul>
+<li>Vector Attribute (VAT): e.g. ST_X, ST_Y, ST_Z, ST_NumberOfPoints</li>
+<li>Vector Accessor (VAC): e.g. ST_ConcaveHull</li> 
+<li>Vector Creation (VC): e.g. ST_GeomFromText, ST_GeomFromWKB</li>
+<li>Vector Exporter (VE): e.g. ST_AsGeoJSON, ST_AsGPX</li> 
+<li>Vector Modification (VM): e.g. ST_Split, ST_Simplify</li>
+<li>Vector Relation (VR): GeoSPARQL functions and Bounding Box Relations</li>
+<li>Raster Accessor (RAC): e.g. ST_NumBands, ST_Width, ST_Height</li>
+<li>Raster Algebra (RAL): e.g. ST_Add,ST_AddConst,ST_Log</li>
+<li>Raster Creation (RC): e.g. ST_MakeNewRaster</li>
+<li>Raster Export (RE): e.g. ST_AsGeoTIFF, ST_AsVector</li>
+<li>Raster Modification (RM): e.g. ST_Rescale, ST_Retile</li>
+<li>Raster Relation (VR): GeoSPARQL relations for raster data: e.g. ST_Contains, ST_Intersects</li>
+<li>Raster/Vector Relation (RVR): GeoSPARQL relations between vector and raster data</li>
+</ul>
+We therefore extend the Geographica Benchmark by incorporating the functions which have been proposed in the GeoSPARQL 2.0 standard proposal and would like to propose to contribute meaningful queries and application cases for the standard.
+As a first evaluation we performed a comparison of GeoSPARQL 2.0 against a POSTGIS database which already includes many of the features which are added using the GeoSPARQL 2.0 proposal.<br/>
+We present the results of these evaluations <a href="#results">here</a>
+</p>
+<h2>Datasets</h2>
+<p>
+We follow the Geographica benchmark approach to define Micro Benchmark Queries and Macro Benchmark Queries which we define as shown below. Microbenchmark queries test the performance of one GeoSPARQL 2.0 function each and evaluates it against counterparts of other triple stores.<br>
+Macrobenchmark Queries test against realworld usecase of which we have defined some, but would like the community to contribute to in order to improve the benchmark.
+</p>
+<h3>Datasets</h3>
+Datasets are divided in datasets containing vector data and datasets containing raster data images.
+<h4>Vector Datasets</h4>
+For the vector data datasets we use the Geographica Benchmark testsets which are linked below:
+<ul>
+	<li>Greek Administrative Geography Dataset (<a href="http://geographica.di.uoa.gr/datasets/gag.tar.xz">download</a>)</li>
+	<li>CORINE Land Use/Land Cover Dataset (<a href="http://geographica.di.uoa.gr/datasets/corine.tar.xz">download</a>)</li>
+	<li>LinkedGeoData Dataset (<a href="http://geographica.di.uoa.gr/datasets/linkedgeodata.tar.xz">download</a>)</li>
+	<li>GeoNames Dataset (<a href="http://geographica.di.uoa.gr/datasets/geonames.tar.xz">download</a>)</li>
+	<li>DBPedia Dataset (<a href="http://geographica.di.uoa.gr/datasets/dbpedia.tar.xz">download</a>)</li>
+	<li>Hotspots Dataset (<a href="http://geographica.di.uoa.gr/datasets/hotspots.tar.xz">download</a>)</li>
+</ul>
+<h4>Raster Datasets</h4>
+Raster data are saved in the raster dataset which we provide in this repository. 
+The raster dataset consists of images provided by <a href="https://download.osgeo.org/geotiff/samples/">OSGEO</a> and <a href="https://www.usgs.gov">USGS</a> and to a greater extent are concerned with risk assessment tasks.
+<h3>Micro Benchmark Queries</h3>
+<ul>
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/vector/attribute">Vector Attribute</a></li>
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/vector/accessor">Vector Accessor</a></li> 
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/vector/creation">Vector Creation</a></li>
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/vector/exporter">Vector Exporter</a></li> 
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/vector/modification">Vector Modification</a></li>
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/vector/relation">Vector Relation</a></li>
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/raster/accessor">Raster Accessor</li>
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/raster/algebra">Raster Algebra</li>
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/raster/creation">Raster Creation</a></li>
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/raster/exporter">Raster Export</a></li>
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/raster/modification">Raster Modification</a></li>
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/raster/relation">Raster Relation</a></li>
+<li><a href="https://github.com/i3mainz/geographica_raster/tree/master/queries/rastervectorrelation">Raster/Vector Relation</a></li>
+</ul>
+<h3>Macro Benchmark Queries</h3>
+<ul>
+    <li><a href="queries/macro/floodsimulation/">Flood Simulation (tbd)</a></li>
+</ul>
+
+<h3>Macro Benchmark Detailed Results</h3>
+In the manuscript [<a href="#reference">1</a>] we report in detail the results 
+of the micro benchmark and the experiments regarding the synthetic workload. 
+The macro benchmark results are also represented on this homepage: 
+<h5>Response Times per query for the <b>Flood Simulation</b> scenario</h5>
+<table>
+		<tr><td>Query</td><td>GeoSPARQL 2.0</td><td>POSTGIS</td></tr>
+		<tr><td>Q1</td><td></td><td></td></tr>
+</table>
+
+<h2>The synthetic workload</h2>
+<p>
+Geographica produced a testset on a synthetic workload. This synthetic dataset has been automatically generated.
+We repeated this test for the vector data functions which were newly defined in GeoSPARQL 2.0.
+The definition of a synthetically created raster data set is to be done. 
+</p>
+<h3>Datasets</h3>
+<ul>
+	<li>Synthetic Vectir Dataset (<a href="http://geographica.di.uoa.gr/datasets/generator_512.tar.xz">download</a>)</li>
+</ul>
+
+<h2>queries</h2>
+<ul>
+    <li><a href="http://geographica.di.uoa.gr/queries/synthetic.txt">Synthetic </a></li>
+</ul>
+
+<h2>Geographica Raster source code</h2>
+<p>
+The Geographica Raster source code is included into the <a href="https://github.com/i3mainz/postgis-jena">Postgis-Jena</a> project which was central to the implementation of GeoSPARQL 2.0.<br/>
+The benchmark can be executed using the following steps:
+<ul>
+<li>Compiling postgis-jena as a Maven Webapp project</li>
+<li>Putting the testdata into the execution folder of the tomcat server which will run the project</li>
+<li>Optionally: Configuring other triple store implementations against which the benchmark is executed</li>
+<li>If using a POSTGIS implementation to benchmark: <ul><li>Setting up a POSTGIS database with the given test data</li><li>Configuring this database to use the JDBC connector defined in Postgis-jena</li></ul>
+</ul>
+
+<h2>Technical Details</h2>
+We have perform experiments using Geographica Raster for the following databases in their respective query languages:
+<ul>
+    <li><b>GeoSPARQL 2.0</b> (Version 1.0)</b></li>
+    <li><b>POSTGIS </b> (Version 11)</b></li>
+</ul>
+The results of these experiments can be found in the manuscript [<a href="#reference">1</a>] of this benchmark.
+<div id=reference>
+	To be published
+</div>
+</body> 
+`</html> 
