@@ -1,0 +1,1 @@
+SELECT st_touches(snow.rast,snow.rast) FROM snow;

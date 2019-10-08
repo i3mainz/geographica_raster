@@ -1,0 +1,1 @@
+SELECT st_covers(snow.rast,snow.rast) FROM snow;

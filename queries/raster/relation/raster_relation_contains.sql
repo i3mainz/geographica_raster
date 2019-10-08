@@ -1,0 +1,1 @@
+SELECT st_contains(snow.rast,snow.rast) FROM snow;

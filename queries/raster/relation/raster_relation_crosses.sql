@@ -1,0 +1,1 @@
+SELECT st_crosses(snow.rast,snow.rast) FROM snow;

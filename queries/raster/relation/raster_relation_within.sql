@@ -1,0 +1,1 @@
+SELECT st_within(snow.rast,snow.rast) FROM snow;

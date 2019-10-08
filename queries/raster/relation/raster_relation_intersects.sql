@@ -1,0 +1,1 @@
+SELECT st_intersects(snow.rast,snow.rast) FROM snow;
