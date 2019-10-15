@@ -1,0 +1,9 @@
+SELECT ?tpi_raster WHERE {
+	?portoparish rdf:type semgis:PortoParish .
+	?portoparish semgis:municipality semgis:Porto .
+	?portoparish geo:hasGeometry ?portoparish_geom .
+	?portoarea rdf:type semgis:PortoArea .
+	?portoarea geo:hasRaster ?portoarea_raster .
+	BIND(geo:TPI(?portoarea_raster) AS ?tpi_raster) 
+	FILTER(ST_Intersects(?portoparish,?portoarea_raster) AND )
+}

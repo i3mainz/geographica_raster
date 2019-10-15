@@ -1,0 +1,1 @@
+SELECT ST_TPI(a.rast,1) as rast FROM rasters.dem AS a, vectors.porto_parishes AS b WHERE ST_Intersects(a.rast, b.geom) AND b.municipality ilike 'porto'

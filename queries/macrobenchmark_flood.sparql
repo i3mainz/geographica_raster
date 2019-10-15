@@ -1,0 +1,1 @@
+SELECT ?road WHERE { ?road rdf:type wd:Road . ?road geo:hasGeometry ?road_geom . ?floodarea rdf:type semgis:FloodArea . ?floodarea geo:hasRaster ?flood_raster . FILTER(!(geo:Intersects(?road_geom,?flood_raster)) }
